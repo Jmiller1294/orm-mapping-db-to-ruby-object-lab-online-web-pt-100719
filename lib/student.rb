@@ -44,11 +44,9 @@ class Student
     SQL
     
     DB[:conn].execute(sql)
-    
   end
   
   def self.students_below_12th_grade
-   
     sql = "SELECT * FROM students WHERE grade < 12"
     
     DB[:conn].execute(sql).map do |row|
@@ -58,8 +56,6 @@ class Student
   
   
   def self.first_X_students_in_grade_10(x)
-   
-    
     sql = <<-SQL
     SELECT*FROM students
     WHERE grade = 10
@@ -77,6 +73,7 @@ class Student
     first_student_row = DB[:conn].execute(sql)[0]
     self.new_from_db(first_student_row)
   end 
+  
   
   def self.all_students_in_grade_X(x)
     sql = "SELECT*FROM students WHERE grade = ?"
