@@ -58,7 +58,7 @@ class Student
     x = number
     
     sql = <<-SQL
-    SELECT FROM students
+    SELECT*FROM students
     WHERE grade = x
     SQL
     
